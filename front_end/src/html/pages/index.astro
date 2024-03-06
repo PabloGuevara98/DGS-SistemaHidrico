@@ -203,7 +203,7 @@ const page = "index";
               <div class="col-lg-7 connectedSortable">
                 <div class="card mb-4">
                   <div class="card-header">
-                    <h3 class="card-title">Sales Value</h3>
+                    <h3 class="card-title">Crecimiento poblacional</h3>
                   </div>
 
                   <div class="card-body">
@@ -525,7 +525,7 @@ const page = "index";
                   class="card text-white bg-primary bg-gradient border-primary mb-4"
                 >
                   <div class="card-header border-0">
-                    <h3 class="card-title">Sales Value</h3>
+                    <h3 class="card-title">Predicciones</h3>
                     <div class="card-tools">
                       <button
                         type="button"
@@ -579,12 +579,16 @@ const page = "index";
 
     <!-- sortablejs -->
     <script
-      src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"
+       src="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/maps/ecuador.js"
       integrity="sha256-ipiJrswvAR4VAx/th+6zWsdeYmVae0iJuiR+6OqHJHQ="
       crossorigin="anonymous"></script>
 
     <!-- sortablejs -->
     <script is:inline>
+    const ecuadorMapData = {
+    EC: 500, // Puedes ajustar este valor según tus datos
+    // Agrega más datos si es necesario
+  };
       const connectedSortables =
         document.querySelectorAll(".connectedSortable");
       connectedSortables.forEach((connectedSortable) => {
@@ -594,12 +598,22 @@ const page = "index";
         });
       });
 
+      const ecuadorMap = new jsVectorMap({
+    selector: "#ecuador-map",
+    map: "ecuador",
+    backgroundColor: "#ffffff", // Puedes ajustar el color de fondo según tu diseño
+    data: ecuadorMapData,
+    zoomButtons: false,
+  });
+
       const cardHeaders = document.querySelectorAll(
         ".connectedSortable .card-header",
       );
       cardHeaders.forEach((cardHeader) => {
         cardHeader.style.cursor = "move";
       });
+
+      ecuadorMap.render();
     </script>
 
     <!-- apexcharts -->
