@@ -15,3 +15,14 @@ Content-Type: application/json
 {
     "value": 6
 }
+
+### PARA PREDECIR EL NIVEL DE AGUA EN UN DÍA ESPECÍFICO
+
+POST http://localhost:3000/api/nivel-agua/predict
+Content-Type: application/json
+
+{
+    "date": "2021-10-01"
+}
+
+

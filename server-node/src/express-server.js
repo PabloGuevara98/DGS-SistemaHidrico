@@ -11,6 +11,7 @@ const client = require('twilio')(accountSid, authToken);
 
 const smsRoutes = require('./routes/smsRoutes');
 const nivelAguaRoutes = require('./routes/nivelAguaRoutes');
+const predictRoutes = require('./routes/predictRoutes');
 
 const app = express();
 
@@ -29,6 +30,9 @@ app.use('/api', smsRoutes);
 
 // Rutas para el modelo NivelAgua
 app.use('/api', nivelAguaRoutes);
+
+//Rutas para predecir el nivel de agua
+app.use('/api', predictRoutes);
 
 // Middleware para manejar rutas no encontradas
 app.use((req, res) => {
