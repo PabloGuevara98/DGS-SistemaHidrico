@@ -6,6 +6,10 @@ const NivelAguaSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
+    consumption: {
+        type: Number,
+        required: false
+    },
     timestamp: {
         type: Date,
         default: Date.now

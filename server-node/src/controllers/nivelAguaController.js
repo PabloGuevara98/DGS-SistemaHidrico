@@ -1,9 +1,17 @@
 const NivelAgua = require('../models/NivelAguaModel.js');
 
+let nivelAguaAnterior = null;
+
 module.exports = function(io) {
     return {
         crearNivelAgua: (req, res) => {
             const { value } = req.body;
+
+            let consumption = 0;
+            if (nivelAguaAnterior !== null) {
+                consumption = nivelAguaAnterior.value - value;
+            }
+            nivelAguaAnterior = value;
     
             const nuevoNivelAgua = new NivelAgua({ value });
     
