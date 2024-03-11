@@ -1,9 +1,9 @@
-// routes/nivelAguaRoutes.js
 const express = require('express');
-const nivelAguaController = require('../controllers/nivelAguaController');
-
 const router = express.Router();
 
-router.post('/nivel-agua/nuevo', nivelAguaController.crearNivelAgua);
+router.post('/nivel-agua/nuevo', (req, res) => {
+    const nivelAguaController = require('../controllers/nivelAguaController')(req.io);
+    nivelAguaController.crearNivelAgua(req, res);
+});
 
 module.exports = router;

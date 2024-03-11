@@ -13,7 +13,7 @@ POST http://localhost:3000/api/nivel-agua/nuevo
 Content-Type: application/json
 
 {
-    "value": 6
+    "value": 6.8
 }
 
 ### PARA PREDECIR EL NIVEL DE AGUA EN UN DÍA ESPECÍFICO
