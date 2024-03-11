@@ -39,3 +39,23 @@ exports. sendSms = async (req, res) => {
     }
 
 };
+
+// Función para enviar alertas de consumo excesivo
+const enviarAlertaConsumoExcesivo = () => {
+    // Implementa la lógica para enviar alertas, ya sea a través de notificaciones push, correos electrónicos, etc.
+    // Puedes utilizar servicios de mensajería como Twilio o nodemailer para esto.
+    const to = process.env.TO_NUMBER;
+    const mensajeAlerta = `Alerta: El consumo total de agua ha superado el límite predefinido.`;
+
+    client.messages.create({
+        body: mensajeAlerta,
+        to: to,
+        from: process.env.TWILIO_PHONE_NUMBER
+    }).then(()=> {
+        console.log('SMS alert sent successfully');
+    }).catch((error) => {
+        console.error('Error sending SMS alert:', error);
+    });
+};
+
+exports.enviarAlertaConsumoExcesivo = enviarAlertaConsumoExcesivo;

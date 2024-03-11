@@ -6,4 +6,9 @@ router.post('/nivel-agua/nuevo', (req, res) => {
     nivelAguaController.crearNivelAgua(req, res);
 });
 
+router.get('/nivel-agua/distribucion', (req, res) => {
+    const nivelAguaController = require('../controllers/nivelAguaController')(req.io);
+    nivelAguaController.obtenerDistribucion(req, res);
+});
+
 module.exports = router;
