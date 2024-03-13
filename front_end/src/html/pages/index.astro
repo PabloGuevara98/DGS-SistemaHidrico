@@ -576,46 +576,6 @@ const page = "index";
     <Scripts path={path} />
 
     <!-- OPTIONAL SCRIPTS -->
-
-    <!-- sortablejs -->
-    <script
-       src="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/maps/ecuador.js"
-      integrity="sha256-ipiJrswvAR4VAx/th+6zWsdeYmVae0iJuiR+6OqHJHQ="
-      crossorigin="anonymous"></script>
-
-    <!-- sortablejs -->
-    <script is:inline>
-    const ecuadorMapData = {
-    EC: 500, // Puedes ajustar este valor según tus datos
-    // Agrega más datos si es necesario
-  };
-      const connectedSortables =
-        document.querySelectorAll(".connectedSortable");
-      connectedSortables.forEach((connectedSortable) => {
-        let sortable = new Sortable(connectedSortable, {
-          group: "shared",
-          handle: ".card-header",
-        });
-      });
-
-      const ecuadorMap = new jsVectorMap({
-    selector: "#ecuador-map",
-    map: "ecuador",
-    backgroundColor: "#ffffff", // Puedes ajustar el color de fondo según tu diseño
-    data: ecuadorMapData,
-    zoomButtons: false,
-  });
-
-      const cardHeaders = document.querySelectorAll(
-        ".connectedSortable .card-header",
-      );
-      cardHeaders.forEach((cardHeader) => {
-        cardHeader.style.cursor = "move";
-      });
-
-      ecuadorMap.render();
-    </script>
-
     <!-- apexcharts -->
     <script
       src="https://cdn.jsdelivr.net/npm/apexcharts@3.37.1/dist/apexcharts.min.js"
@@ -649,7 +609,7 @@ const page = "index";
         legend: {
           show: false,
         },
-        colors: ["#0d6efd", "#20c997"],
+        colors: ["#ED0704", "#F6F21E"],
         dataLabels: {
           enabled: false,
         },
@@ -737,7 +697,7 @@ const page = "index";
         yaxis: {
           min: 0,
         },
-        colors: ["#DCE6EC"],
+        colors: ["#0B5C4F"],
       };
 
       const sparkline1 = new ApexCharts(
