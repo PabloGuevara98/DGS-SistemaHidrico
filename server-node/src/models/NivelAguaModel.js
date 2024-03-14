@@ -17,6 +17,7 @@ const NivelAguaSchema = new mongoose.Schema({
 });
 
 //metodo estatico para obtener el ultimo nivel de agua
+//Importante 
 
 NivelAguaSchema.statics.getUltimoNivel = function() {
     return this.findOne().sort('-timestamp').select('value').exec();
