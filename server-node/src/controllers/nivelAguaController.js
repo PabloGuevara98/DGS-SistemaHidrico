@@ -65,7 +65,7 @@ module.exports = function(io) {
     };
 };
 
-// Función para calcular la distribución del consumo de agua
+// Función para calcular la distribución del consumo de agua para las comunidades 
 const calcularDistribucion = (consumoTotal) => {
     // Implementa la lógica para dividir el consumo total entre las diferentes áreas o usuarios
     // Esto dependerá de cómo esté estructurada tu aplicación
